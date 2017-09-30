@@ -1,16 +1,16 @@
-from flask import Flask, url_for, abort
+from flask import Flask, request
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
-  return "Hello George"
+def root():
+  return "The default 'root' route"
 
-@app.route('/static-example/img')
-def static_example_img():
-  start = '<img src="'
-  url = url_for('static', filename='vmask.jpg')
-  end = '">'
-  return start+url+end, 200
+@app.route("/account/", methods=['GET', 'POST'])
+def account():
+  if request.method == 'POST':
+    return "POST'ed to /account root\n"
+  else:
+    return "GET /account root"
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)
