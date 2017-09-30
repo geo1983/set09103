@@ -5,6 +5,10 @@ app = Flask(__name__)
 def hello():
   return "Hello George"
 
+@app.route('/force404')
+def force404():
+  abort(404)
+
 @app.errorhandler(404)
 def page_not_found(error):
   return "Couldn't find the page you requested", 404
