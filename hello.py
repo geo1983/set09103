@@ -1,5 +1,9 @@
-from flask import Flask, request
+from flask import Flask, request, url_for
 app = Flask(__name__)
+
+@app.route("/display/")
+def display():
+  return '<img src="'+url_for('static', filename='uploads/upload.png')+'"/>'
 
 @app.route("/account/", methods=['POST','GET'])
 def account():
