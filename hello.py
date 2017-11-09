@@ -1,18 +1,21 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, flash, redirect, request, url_for
 app = Flask(__name__)
+app.secret_key = 'supersecret'
 
-@app.route('/inherits/')
-def inherits():
-  return render_template('base.html')
 
-@app.route('/inherits/one/')
-def inherits_one():
-  return render_template('inherit1.html')
+@app.route('/')
+def index():
+  return render_template('index.html')
 
-@app.route('/inherits/two/')
-def inherits_two():
-  return render_template('inherit2.html')
-  
+@app.route('/login/')
+@app.route('/login/<message>')
+def login(message=None):
+  if (message != None):
+    flash(message)
+  else:
+    flash(u'A default mess ')
+  return redirect(url_for('index'))
+ 
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)
