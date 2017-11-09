@@ -1,0 +1,6 @@
+INFO | 2017-11-09 12:26:52,530 | loggingapp | root | Logging a test message from /
+INFO | 2017-11-09 12:27:05,750 | loggingapp | root | Logging a test message from /
+INFO | 2017-11-09 12:27:08,712 | loggingapp | root | Logging a test message from /
+INFO | 2017-11-09 12:27:22,133 | loggingapp | root | Logging a test message from /
+INFO | 2017-11-09 12:27:23,711 | loggingapp | root | Logging a test message from /
+INFO | 2017-11-09 12:27:25,560 | loggingapp | root | Logging a test message from /
